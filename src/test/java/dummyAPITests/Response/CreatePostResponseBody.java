@@ -1,6 +1,5 @@
 package dummyAPITests.Response;
 
-import com.beust.ah.A;
 import dummyAPITests.Request.CreatePostRequestBody;
 import lombok.Getter;
 import lombok.Setter;

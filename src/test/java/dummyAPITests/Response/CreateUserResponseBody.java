@@ -1,7 +1,5 @@
 package dummyAPITests.Response;
 
-import com.beust.ah.A;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import dummyAPITests.Request.CreateUserRequestBody;
 import lombok.Getter;
 import lombok.Setter;

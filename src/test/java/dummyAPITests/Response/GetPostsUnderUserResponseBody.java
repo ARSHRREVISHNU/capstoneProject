@@ -1,9 +1,6 @@
 package dummyAPITests.Response;
 
 import java.util.*;
-
-import com.beust.ah.A;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.testng.Assert;
