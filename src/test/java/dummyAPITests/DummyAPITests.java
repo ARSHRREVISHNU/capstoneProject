@@ -37,7 +37,6 @@ public class DummyAPITests {
     public void getUsersUnderMyIdTest(){
         GetAllUsersResponseBody getAllUsersResponseBody = usersServices.getUsersForMyId();
         Assert.assertEquals(getAllUsersResponseBody.getStatusCode(), 200);
-        //Assert.assertEquals(getAllUsersResponseBody.getTotal(), 23);
         Assert.assertEquals(getAllUsersResponseBody.getLimit(), 20);
     }
 
@@ -48,26 +47,15 @@ public class DummyAPITests {
        Assert.assertEquals(createPostResponseBody.getStatusCode(), 200);
        Assert.assertEquals(createPostRequestBody.getOwner(), "6324b61a0f6bf1c728b108fc");
     }
-//
-//    @Test(priority = 5)
-//    public void getPostsByUserIdTest(){
-//        GetPostsUnderUserResponseBody getPostsUnderUserResponseBody = usersServices.getPostsUnderId();
-//        getPostsUnderUserResponseBody.asserGetpostDetails(200, 17, 10);
-//    }
-//
-//    @Test(priority = 6)
-//    public void getPostById(){
-//        CreatePostRequestBody createPostRequestBody = new CreatePostRequestBody.Builder().build();
-//        CreatePostResponseBody createPostResponseBody =  usersServices.createPostUnderId(createPostRequestBody);
-//        GETPostResponseBody getPostResponseBody = usersServices.getPostById(createPostResponseBody.getId());
-//        getPostResponseBody.assertPost(createPostResponseBody);
-//    }
-//
-//    @Test(priority = 7)
-//    public void deletePostById(){
-//        DeletePostResponseBody deletePostResponseBody = usersServices.deletePostById("632956893a85879895d015bd");
-//        deletePostResponseBody.assertDeletedPost("632956893a85879895d015bd");
-//        GETDeletedPostResponseBody getDeletedPostResponseBody = usersServices.getDeletedPost("632956893a85879895d015bd");
-//        getDeletedPostResponseBody.assertDeletedPost("RESOURCE_NOT_FOUND");
-//    }
+
+    @Test
+    public void createAndDeletePostTest(){
+        CreatePostRequestBody createPostRequestBody = new CreatePostRequestBody.Builder().build();
+        CreatePostResponseBody createPostResponseBody = usersServices.createPostUnderId(createPostRequestBody);
+        String id = createPostResponseBody.getId();
+        //Deletes the post
+        DeletePostResponseBody deletePostResponseBody = usersServices.deletePostById(id);
+       Assert.assertEquals( deletePostResponseBody.getId(), id);
+    }
+
 }
