@@ -11,10 +11,10 @@ public class UsersClient {
 
     public Response getAll(){
         Response response =
-                given()
-                    .header("app-id", "63232a178f9470ed08c6f4be")
-                    .queryParam("limit", 10)
-                .when()
+        given()
+                .header("app-id", "63232a178f9470ed08c6f4be")
+                .queryParam("limit", 10)
+                        .when()
                     .get("https://dummyapi.io/data/v1/user/");
         response
                 .then()
