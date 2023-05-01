@@ -111,8 +111,8 @@ public class MatrixProblems {
         //matrixProblems.addingDiagonalMatrix(a, 3);
         //matrixProblems.addingTwoMatrics(a, b);
         //matrixProblems.subtractingTwoMatrics(a, b);
-        //matrixProblems.multiplyTwoMatrics(a, b);
-        matrixProblems.transposeMatrix(a);
+        matrixProblems.multiplyTwoMatrics(a, b);
+        //matrixProblems.transposeMatrix(a);
     }
 
 
